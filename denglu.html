@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width: 100%;
+            height: 170px;
+        }
+        .headbox{
+            width: 1450px;
+            height: 170px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #ff9a15;
+        }
+        .headboxtext{
+            width: 578px;
+            height: 170px;
+            text-align: center;
+            line-height: 170px;
+            color: black;
+        }
+        .headbox1{
+            color: blue;
+        }
+        .content{
+            width: 1450px;
+            height: 500px;
+            border: 1px solid #aaa;
+            margin: 0 auto;
+        }
+        .active{
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+        }
+        .div1{
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            line-height: 40px;
+            margin-bottom: 30px;
+        }
+        .username{
+            width: 200px;
+            height: 40px;
+            border: 0;
+            outline: none;
+        }
+        .pass{
+            width: 200px;
+            height: 40px;
+            border: 0;
+            outline: none;
+        }
+        .btn{
+            width: 100%;
+            height: 40px;
+            border: 0;
+            outline: none;
+            background: #ff9a15;
+        }
+    </style>
+</head>
+<body>
+            <div class="active">
+                <div class="div1">
+                    <input type="text" class="username" placeholder="用户名/手机/邮箱">
+                </div>
+                <div class="div1">
+                    <input type="password" class="pass" placeholder="密码">
+                </div>
+                <button class="btn">登录</button>
+            </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $('.btn').on('click',function(){
+            $.post("http://localhost:6060/login",{
+                username:$(".username").val(),
+                password:$(".pass").val()
+            },function(res){
+                alert(res)
+            })
+    })
+</script>
+</html>
+</body>
+</html>
